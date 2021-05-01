@@ -1,0 +1,40 @@
+
+
+<div class="inpt py-5 w-75 m-auto">
+    <input type="text"  [(ngModel)]='term' class="form-control bg-transparent text-white " placeholder="SERCH MOVIE">
+</div>
+
+
+
+<div class="row">
+
+ 
+
+
+<div class="col-md-4 py-3">
+    <div class="brdr w-50">
+
+    </div>
+<h3 class="movie py-2">trending movies <br/> to watch<br/>  reight now </h3>
+<p class="movie py-1">most watched movies by dayes  </p>
+<div class="brdr w-100 ">
+
+</div>
+</div>
+
+
+
+<div  *ngFor="let movie of moviestv|search:term"  class="col-md-2">
+<div [routerLink]="['/moviedatiles',movie.id]" class="img2 position-relative">
+<img [src]="img4+movie. poster_path"alt="" class="w-100"> 
+  <h4 class="movie h5" >{{movie.title}} {{movie.name}}</h4>
+  <div class="vot">
+   {{movie.vote_average}}
+  </div>
+ </div>
+ </div>
+
+
+
+</div>
+

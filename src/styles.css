@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+body
+{
+    background-color: black;
+    font-family: 'Potta One', cursive;
+}
+ input
+ {
+     background-color: whitesmoke !important;
+     color: black !important;
+     border: solid 1px black !important;
+     
+ }
+
+

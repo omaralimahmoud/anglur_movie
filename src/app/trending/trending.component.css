@@ -1,0 +1,18 @@
+.movie
+{
+    color: white;
+}
+.brdr
+
+{
+    height: 1px;
+    background-color:whitesmoke;
+}
+.vot
+{
+    background-color: dodgerblue;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

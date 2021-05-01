@@ -1,0 +1,29 @@
+<div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="sumbitForm(loginForm)">
+       
+        <div *ngIf="error1" class="alret alert-danger">
+            {{error1}}
+        </div>
+
+        <label class=" s text-white">email</label>
+        <input formControlName="email" type="email" class="form-control ">
+        <div *ngIf="loginForm.controls.email.errors && loginForm.controls.email.touched " class="alret alert-danger">
+            <p *ngIf="loginForm.controls.email.errors.required">the email isrequired</p>
+            <p *ngIf="loginForm.controls.email.errors.email">the email isrequired @</p>
+        </div>
+
+
+        <label class="text-white">password</label>
+
+        <input formControlName="password" class="form-control" type="password">
+
+
+        <div *ngIf="loginForm.controls.password.errors && loginForm.controls.password.touched  "
+            class="alret alert-danger">
+            <p *ngIf="loginForm.controls.password.errors.required"> the password is required</p>
+            <p *ngIf="loginForm.controls.password.pattern"> the password is requried write the a-z or 0-9 5 to 10 </p>
+        </div>
+        <button  [disabled]="!loginForm.valid" type="submit" class="btn btn-info float-right">login</button>
+    </form>
+
+</div>

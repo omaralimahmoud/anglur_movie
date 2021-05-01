@@ -1,0 +1,56 @@
+<form [formGroup]=" registerForm" (ngSubmit)='sumbitForm(registerForm)' >
+    
+
+    <div *ngIf="errorMessage" class="alret alert-danger">
+       {{errorMessage}}
+    </div>
+    
+    <label class=" text-white">frist Name:</label>
+<input formControlName="first_name"   type="text" class="form-control mt-2">
+<div *ngIf="registerForm.controls.first_name.errors && registerForm.controls.first_name.touched " class="alret alert-danger">
+<p *ngIf="registerForm.controls.first_name.errors.required">the frist name is requried</p>
+<p *ngIf="registerForm.controls.first_name.errors.minlength">the frist name is requried  min 4</p>
+<p *ngIf="registerForm.controls.first_name.errors.maxlength">the frist name is requried max 11</p>
+
+
+</div>
+   
+    
+    
+    <label class=" text-white">Last Name:</label>
+    <input formControlName="last_name"  type="text" class="form-control  mt-2">
+    <div *ngIf="registerForm.controls.last_name.errors && registerForm.controls.last_name.touched " class="alret alert-danger">
+        <p *ngIf="registerForm.controls.last_name.errors.required">the last_name is requried</p>
+        <p *ngIf="registerForm.controls.last_name.errors.minlength">the last_name is requried min4</p>
+        <p *ngIf="registerForm.controls.last_name.errors.maxlength">the frist name is max 11</p>
+        </div>
+    <label class=" text-white">Age:</label>
+    <input formControlName="age"   type="number" class="form-control mt-2">
+    <div *ngIf="registerForm.controls.age.errors && registerForm.controls.age.touched " class="alret alert-danger">
+        <p *ngIf="registerForm.controls.age.errors.required">the age is requried</p>
+        <p *ngIf="registerForm.controls.age.errors.min">the age is requried min 11</p>
+        <p *ngIf="registerForm.controls.age.errors.max">the age is max 100</p>
+        </div>
+    <label class=" text-white">Email:</label>
+    <input  formControlName="email"   type="email" class="form-control mt-2">
+    <div *ngIf="registerForm.controls.email.errors && registerForm.controls.email.touched " class="alret alert-danger">
+        <p *ngIf="registerForm.controls.email.errors.required">the email is requried</p>
+        <p *ngIf="registerForm.controls.email.errors.email">the email is requried @</p>
+       
+        </div>
+    <label class=" text-white">password:</label>
+    <input formControlName="password"  type="password" class="form-control mt-2">
+    <div *ngIf="registerForm.controls.password.errors && registerForm.controls.password.touched " class="alret alert-danger">
+        <p *ngIf="registerForm.controls.password.errors.required">the password is requried</p>
+        <p *ngIf="registerForm.controls.password.errors.pattern">the password is requried write the a-z or 0-9 5 to 10 </p>
+       
+        </div>
+    
+    <button type="submit" [disabled]="!registerForm.valid" class="btn btn-info float-right">registernew</button>
+    
+    
+    
+    
+    
+    
+    </form>

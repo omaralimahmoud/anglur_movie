@@ -28,9 +28,17 @@
               "src/assets"
             ],
             "styles": [
+             
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -124,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "routing"
+  "defaultProject": "routing",
+  "cli": {
+    "analytics": "04e7bc63-5bf1-4841-83d5-1c0da2d806de"
+  }
 }
